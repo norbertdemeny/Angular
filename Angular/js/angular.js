@@ -113,7 +113,9 @@ angular.module('search', ['RecursionHelper'])
         restrict: "E",
         scope: {family: '='},
         template:
-        '<p>{{ family.name }}{{test }}</p>'+
+            '<p>{{ family.type }}{{test }}</p>'+
+            '<p>{{ family.name }}{{test }}</p>'+
+
         '<ul>' +
         '<li ng-repeat="child in family.children">' +
         '<tree family="child"></tree>' +
