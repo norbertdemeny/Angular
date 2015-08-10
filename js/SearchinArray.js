@@ -2,9 +2,34 @@
  * Created by norbertdemeny on 8/5/2015.
  */
 (function() {
-    var app = angular.module('app', []);
+    var app = angular.module('app', ['ngMdIcons']);
+
+
+
 
     app.controller('AppCtrl', function ($scope) {
+
+
+        $scope.isHTML= function(filename){
+            console.log('filename is',filename);
+            var patt=new RegExp(".*\.html");
+            var result=patt.test(filename);
+            return result;
+        };
+
+        $scope.isJS= function(filename) {
+            console.log('filename is', filename);
+            var patt = new RegExp(".*\.js");
+            var res = patt.test(filename);
+            return res;
+        };
+
+        $scope.isCSS= function(filename) {
+            console.log('filename is', filename);
+            var patt = new RegExp(".*\.css");
+            var res = patt.test(filename);
+            return res;
+        };
 
 
         $scope.categories = [{
@@ -52,5 +77,6 @@
         }]
 
     });
+
 })();
 
